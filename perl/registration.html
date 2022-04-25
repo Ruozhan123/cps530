@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato',sans-serif;
+}
+body{
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: #f0f2f5;
+}
+.container{
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.10);
+}
+.container .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 35px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+}
+.user-details .input-box select{
+  height: 35px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+}
+
+
+ form .gender-details .gender-title{
+  font-size: 20px;
+  font-weight: 500;
+ }
+ form .gender-div{
+   display: grid;
+   width: 80%;
+   margin: 15px 0 ;
+   grid-template-columns: auto auto auto;
+ }
+ form .gender-div label .gender-span {
+   margin-left: 5px;
+ }
+ form .button{
+   height: 45px;
+   margin: 35px 0
+ }
+ form .button input{
+   height: 100%;
+   width: 100%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   background: #004C9B;
+ }
+ form .button input:hover{
+  background: #9b59b6;
+  }
+ @media(max-width: 767px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form action="cgi-bin/registration.pl" method="post">
+        <div class="user-details">
+          <div class="input-box">
+            <label for="fname">First Name</label>
+            <input type="text" placeholder="First name" name="fname" id="fname">
+          </div>
+          <div class="input-box">
+            <label for="lname">Last Name</label>
+            <input type="text" placeholder="Last Name"  name="lname" required>
+          </div>
+          <div class="input-box">
+            <label for="email">Email</label>
+            <input type="text" name="email" placeholder="Enter your Email" required>
+          </div>
+          <div class="input-box">
+            <label for="phone">Phone Number</label>
+            <input type="text" name="phone" placeholder="Enter your Phone number" required>
+          </div>
+          <div class="input-box">
+            <label for="password">Password</span>
+            <input type="password" name="password" placeholder="Enter your password" required>
+          </div>
+          <div class="input-box">
+            <label for="password-confirm">Confirm Password</span>
+            <input type="password" name="password-confirm" placeholder="Confirm your password" required>
+          </div>
+
+          <div class="input-box">
+            <label for="street">Street</span>
+            <input type="text" name="street_address" placeholder="Street Address" required>
+          </div>
+          <div class="input-box">
+            <label for="city">City</span>
+            <input type="text" name="city" placeholder="City name" required>
+          </div>
+          <div class="input-box">
+            <label for="province">Province</span>
+            <select name="province" id="province" class="drop_down">
+              <option value="Alberta" selected>Alberta</option>
+              <option value="Manitoba">Manitoba</option>
+              <option value="British Columbia">British Columbia</option>
+              <option value="New Brunswick">New Brunswick</option>
+              <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+              <option value="Northwest Territories">Northwest Territories</option>
+              <option value="Nova Scotia">Nova Scotia</option>
+              <option value="Nunavut">Nunavut</option>
+              <option value="Ontario">Ontario</option>
+              <option value="Prince Edward Island">Prince Edward Island</option>
+              <option value="Quebec">Quebec</option>
+              <option value="Saskatchewan">Saskatchewan</option>
+              <option value="Yukon">Yukon</option>
+            </select>
+          </div>
+          <div class="input-box">
+            <label for="postal_code">Postal Code</span>
+            <input type="text" name="postal_code" placeholder="Postal code" required>
+          </div>
+          <div class="input-box">
+            <label for="country">Country</span>
+            <input type="text" name="country" placeholder="Country" required>
+          </div>
+        </div>
+        <div class="gender-details">
+          <label for="gender-title">Gender</label><br>
+          <div class="gender-div">
+            <div>
+              <input type="radio" name="gender" id="gender-1" value="Female">
+              <label for="gender-1">
+                <span class="gender-span">Female</span>
+              </label>
+            </div>
+            <div>
+              <input type="radio" name="gender" id="gender-2" value="Male">
+              <label for="gender-2">
+                <span class="gender-span">Male</span>
+              </label>
+            </div>
+          <div>
+          <input type="radio" name="gender" id="gender-3" value="Custom">
+          <label for="gender-3">
+            <span class="gender-span">Custom</span>
+            </label>
+          </div>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
