@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>Lab7 - Mr. Potato</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="lab7-1.css">
+</head>
+<body>
+<h1>Mr. Potato Head</h1>
+<div class="container">
+  <div class="parts">
+    <input type="checkbox" id="mouth"><img id="part-1" src="lab7_imgs/mouth.png" class="draggable" />
+    <input type="checkbox" id="nose"><img id="part-2"src="lab7_imgs/nose.png" class="draggable" />
+    <input type="checkbox" id="eyes"><img id="part-3"src="lab7_imgs/eyes.png" class="draggable" />
+    <input type="checkbox" id="hat"><img id="part-4" src="lab7_imgs/hat.png" class="draggable" />
+  </div>
+  <div class="body_part">
+    <img src="lab7_imgs/body.png" />
+  </div>
+</div>
+<script>
+const draggableElements = document.querySelectorAll(".draggable");
+var initX, initY, firstX, firstY, whichDown;
+
+window.addEventListener(
+  "mouseup",
+  function () {
+    if (whichDown) {
+      whichDown.style.zIndex = 1;
+    }
+    whichDown = null;
+  },
+  false
+);
+
+window.addEventListener("mousemove", draggable, false);
+
+draggableElements.forEach((element) => {
+  element.addEventListener("mousedown", function (e) {
+    e.preventDefault();
+    whichDown = this;
+    initX = this.offsetLeft;
+    initY = this.offsetTop;
+    firstX = e.pageX;
+    firstY = e.pageY;
+  });
+});
+
+function draggable(e) {
+  e.preventDefault();
+  if (!whichDown) return;
+  whichDown.style.zIndex = 1;
+  whichDown.style.left = initX + e.pageX - firstX + "px";
+  whichDown.style.top = initY + e.pageY - firstY + "px";
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{
+    "response": {
+      "type": "result",
+      "data": {
+        "item": {
+          "title": "Yimago 2 / Hawaiian Music Radio",
+          "song": "Cecilio & Kapono - 6 O'Clock Bad News [Live] [1982]",
+          "track": {
+            "artist": "Cecilio & Kapono",
+            "title": "6 O'Clock Bad News [Live] [1982]",
+            "album": "Together Live",
+            "royaltytrackid": "0",
+            "started": "1574276600",
+            "id": "44930",
+            "length": "0",
+            "playlist": {
+              "id": "1579",
+              "title": "Y2 > General"
+            },
+            "imageurl": "http://cps-static.rovicorp.com/3/JPG_1080/MI0001/959/MI0001959411.jpg"
+          },
+          "bitrate": "64 Kbps",
+          "server": "Online",
+          "autodj": "Online",
+          "source": "Yes",
+          "summary": "<a href=\"http://199.195.194.92:2199/tunein/-stream/meyima03.pls\">Yimago 2 / Hawaiian Music Radio - Cecilio & Kapono - 6 O'Clock Bad News [Live] [1982]</a>",
+          "listeners": "2",
+          "maxlisteners": "100",
+          "reseller": "0",
+          "serverstate": "1",
+          "sourcestate": "1",
+          "sourceconn": "1",
+          "date": "Nov 20, 2019",
+          "time": "09:06 AM",
+          "rawmeta": "Cecilio & Kapono - 6 O'Clock Bad News [Live] [1982]",
+          "mountpoint": "/stream",
+          "tuneinurl": "http://199.195.194.94:8183/stream",
+          "tuneinformat": "aac",
+          "webplayer": "muses",
+          "servertype": "ShoutCast2",
+          "listenertotal": "2",
+          "url": "http://199.195.194.92:2199/rpc"
+        }
+      }
+    }
+  }

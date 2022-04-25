@@ -1,0 +1,42 @@
+
+h1 {
+  text-align: center;
+}
+.body_part {
+  index: 0;
+}
+.body_part img {
+  top: 100px;
+}
+.container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 30px;
+}
+
+.container .parts {
+  position: relative;
+  margin: 0 auto;
+}
+.container img {
+}
+
+#part-1 {
+    top: 100px;
+    left: 0;
+}
+#part-2 {
+    top: 150px;
+    left: 120px;
+}
+#part-3 {
+    top: 230px;
+}
+#part-4 {
+    top: 260px;
+    left: 110px;
+
+}
+
+
+}

@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Lab7 - Mr. Potato Head</title>
+        <link rel="stylesheet" type="text/css" href="lab7.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1 style="font-size: 40;">Mr. Potato Head</h1> <br>
+        <h5>Name: Majuth Kirakalaprathapan</h5>
+        <h5>Student #: 500878999</h5>
+        <img id="mainBody" src="lab7-imgs/potatoBody.gif" alt="potatoBody">
+        <img style="left: 6px; top: 0px;" id="1" class="movableImg" src="lab7-imgs/potatoCaptainHat.gif" alt="CaptainHat">
+        <img style="left: 6px; top: 100px;" id="2" class="movableImg" src="lab7-imgs/potatoEyePair.gif" alt="eyes">
+        <img style="left: 6px; top: 200px;" id="3" class="movableImg" src="lab7-imgs/potatoGirlEyes.gif" alt="eyes">
+        <img style="left: 6px; top: 400px;" id="4" class="movableImg" src="lab7-imgs/potatoLeftEar.gif" alt="ear">
+        <img style="left: 56px; top: 395px;" id="5" class="movableImg" src="lab7-imgs/potatoRightEar.gif" alt="ear">
+        <img style="left: 200px; top: 0px;" id="6" class="movableImg" src="lab7-imgs/potatoHat.gif" alt="hat">
+        <img style="left: 200px; top: 100px;" id="7" class="movableImg" src="lab7-imgs/potatoLips.gif" alt="lips">
+        <img style="left: 150px; top: 200px;" id="8" class="movableImg" src="lab7-imgs/potatoMouth.gif" alt="mouth">
+        <img style="left: 6px; top: 300;" id="9" class="movableImg" src="lab7-imgs/potatoNose.gif" alt="nose">
+        <img style="left: 200px; top: 300px;" id="10" class="movableImg" src="lab7-imgs/potatoSkinnyNose.gif" alt="nose">
+        <img style="left: 200px; top: 400px;" id="11" class="movableImg" src="lab7-imgs/potatoTeeth.gif" alt="teeth">
+        <script>
+                dragElement(document.getElementById("1"));
+                dragElement(document.getElementById("2"));
+                dragElement(document.getElementById("3"));
+                dragElement(document.getElementById("4"));
+                dragElement(document.getElementById("5"));
+                dragElement(document.getElementById("6"));
+                dragElement(document.getElementById("7"));
+                dragElement(document.getElementById("8"));
+                dragElement(document.getElementById("9"));
+                dragElement(document.getElementById("10"));
+                dragElement(document.getElementById("11"));
+
+                function dragElement(elmnt) {
+                    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+                    elmnt.onmousedown = dragMouseDown;
+
+
+                  function dragMouseDown(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                    document.onmouseup = closeDragElement;
+
+                    document.onmousemove = elementDrag;
+                  }
+
+                  function elementDrag(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+
+                    pos1 = pos3 - e.clientX;
+                    pos2 = pos4 - e.clientY;
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+
+                    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+                  }
+
+                  function closeDragElement() {
+                    document.onmouseup = null;
+                    document.onmousemove = null;
+                  }
+                }
+        </script>
+
+    </body>
+</html>

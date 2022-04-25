@@ -1,0 +1,73 @@
+<html>
+<head>
+	<title>Lab 8 - Part 2</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+     		//setTimeout(function() { location.reload(); }, 300000);
+	</script>
+	<link rel="stylesheet" type="text/css" href="lab8-part1.css"></link>
+
+</head>
+<body>
+	  	<h2 id="title"></h2>
+
+		<div id="date">
+                <p class="dateText" id="dateEntry"></p>
+		<p class="dateText" id="timeEntry"></p>
+		</div>
+
+		<div id="player">
+		<p id="playlist"></p>
+
+
+
+
+		<img id="picture" alt="Flowers" style="width:300px; margin-bottom: 20px;"></img>
+
+		<br/>
+		<audio controls id="play" src="google.com"></audio>
+
+		<p id="titleEntry"></p>
+		<p id="artistEntry"></p>
+		<p id="albumEntry"></p>
+		</div>
+
+		<div id="listeners">
+		<h4>Listening stats:</h4>
+			<p id="current"></p>
+			<p id="max"></p>
+		</div>
+
+		<div id="stats">
+		<h4>Stats for nerds:</h4>
+			<p id="bitrate">Bitrate: <xsl:value-of select="response/data/item/bitrate"/></p>
+			<p id="status">Server status: <xsl:value-of select="response/data/item/server"/></p>
+			<p id="tuneinurl">Tune in url: <xsl:value-of select="response/data/item/tuneinurl"/></p>
+			<p id="format">Foramt: <xsl:value-of select="response/data/item/tuneinformat"/></p>
+		</div>
+
+	<script>
+		$.getJSON( "lab8-streaminfo2.json", function( json ) {
+    			console.log(json);
+			document.getElementById("title").innerHTML = json.response.data.item.title;
+			document.getElementById("dateEntry").innerHTML = json.response.data.item.date;
+			document.getElementById("timeEntry").innerHTML = json.response.data.item.time + " (HST)";
+			document.getElementById("playlist").innerHTML = "Playlist: " + json.response.data.item.track.playlist.title;
+			document.getElementById("picture").src = json.response.data.item.track.imageurl;
+			document.getElementById("titleEntry").innerHTML = json.response.data.item.track.title;
+			document.getElementById("artistEntry").innerHTML = json.response.data.item.track.artist;
+			document.getElementById("albumEntry").innerHTML = json.response.data.item.track.album;
+			document.getElementById("current").innerHTML = "Current Listeners: " + json.response.data.item.listeners;
+			document.getElementById("max").innerHTML = "Max Listeners: " + json.response.data.item.maxlisteners;
+			document.getElementById("bitrate").innerHTML = "Bitrate: " + json.response.data.item.bitrate;
+			document.getElementById("status").innerHTML = "Server status: " + json.response.data.item.server;
+			document.getElementById("tuneinurl").innerHTML = "Tune in url: " + json.response.data.item.tuneinurl;
+			document.getElementById("format").innerHTML = "Format: " + json.response.data.item.tuneinformat;
+			document.getElementById("play").src = json.response.data.item.tuneinurl;
+
+
+		});
+
+	</script>
+</body>
+</html>

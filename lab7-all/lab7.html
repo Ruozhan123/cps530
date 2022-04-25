@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lab 7 - Mr. Potato Head</title>  <meta charset="utf-8">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="potato.css">
+	</head>
+
+	<body>
+	<div class="container">
+		<div class="row">
+				<h1>Mr. Potato Head</h1>
+		</div>
+  	<div class="row">
+			<fieldset id="controls">
+				<legend>Parts</legend>
+				<label><input type="checkbox" id="eyes" /> Eyes</label>
+				<label><input type="checkbox" id="mouth" /> Mouth</label>
+				<label><input type="checkbox" id="nose" /> Nose</label>
+				<label><input type="checkbox" id="hat" /> Hat</label>
+			</fieldset>
+
+			<div id="potato">
+				<img id="body_image" src="lab7_imgs/body.png" style=""/>
+				<img id="eyes_image" src="lab7_imgs/eyes.png" alt="eyes" />
+				<img id="mouth_image" src="lab7_imgs/mouth.png" alt="mouth"  />
+				<img id="nose_image" src="lab7_imgs/nose.png" alt="nose" />
+				<img id="hat_image" src="lab7_imgs/hat.png" alt="hat" />
+			</div>
+		</div>
+</div>
+
+<script>
+$(document).ready(function(){
+		$('input[type="checkbox"]').click(function(){
+				if($(this).prop("checked") == true){
+						$("#" + this.id + "_image").show();
+				}
+				else if($(this).prop("checked") == false){
+						$("#" + this.id + "_image").hide();
+				}
+		});
+		$('input[type="button"]').click(function(){
+			const imageURI = canvas.toDataURL("image/jpg");
+		  el.href = imageURI;
+		});
+});
+
+</script>
+
+</body>
+</html>
