@@ -39,7 +39,7 @@
         }
         else {
           echo $error_msg;
-          echo "<a href='https://www.scs.ryerson.ca/~r56li/multiplicationTable.php'>Return to the form</a>";
+          echo "<a href='/'>Return to the form</a>";
         }
 			?>
     </div>
