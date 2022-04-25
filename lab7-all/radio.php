@@ -1,5 +1,5 @@
 <?php
-$get_json_file_contents = file_get_contents("https://s9.reliastream.com:2199/rpc/meyima03/streaminfo.get");
+$get_json_file_contents = file_get_contents("radio.json");
 
 $array = json_decode($get_json_file_contents, true);
 $array_data = $array["data"][0];
